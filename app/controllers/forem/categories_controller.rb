@@ -1,9 +1,9 @@
 module Forem
   class CategoriesController < Forem::ApplicationController
-    load_and_authorize_resource
+    load_and_authorize_resource :class => 'Forem::Category'
 
     def show
-      @category = Category.find(params[:id])
+      @category = Forem::Category.find(params[:id])
     end
   end
 end
